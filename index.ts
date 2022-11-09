@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 import multer from "multer";
 import path from "path";
-// const upload = multer({ dest: 'uploads/' })
 
 const imageStorage = multer.diskStorage({
   destination: "uploads",
@@ -24,12 +23,15 @@ app.get("/", (req: Request, res: Response) => {
   res.send("hello");
 });
 
-// app.get('/image', )
 
 app.post("/file", upload.single("file"), (req: Request, res: Response) => {
-  // console.log(req.file);
-  // console.log(req);
+  console.log(req.file);
   res.end();
 });
 
+
 app.listen("9261", () => console.log("Server on"));
+
+
+//file filter
+//multiple image
